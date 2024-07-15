@@ -31,7 +31,9 @@ namespace Interview.UI.Controllers
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred : {ex.Message}", ex);
+                // here error message is passed to "Error.chtml" by calling return function 
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
             }
 
         }
@@ -73,7 +75,8 @@ namespace Interview.UI.Controllers
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred : {ex.Message}", ex);
+                // here error message is passed to automatically to "Error.chtml"                 ViewBag.ErrorMessage = ex.Message;
+                throw new ApplicationException($"An error occurred in create : {ex.Message}", ex);
             }
 
         }       
@@ -93,7 +96,9 @@ namespace Interview.UI.Controllers
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred : {ex.Message}", ex);
+                // here error message is passed to "Error.chtml" by calling return function 
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
             }
 
         }
@@ -124,7 +129,9 @@ namespace Interview.UI.Controllers
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred : {ex.Message}", ex);
+                // here error message is passed to "Error.chtml" by calling return function 
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
             }
         }  
                 // GET: Profile/Delete/5
@@ -142,7 +149,9 @@ namespace Interview.UI.Controllers
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred : {ex.Message}", ex);
+                // here error message is passed to "Error.chtml" by calling return function 
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
             }
         }
 
@@ -157,6 +166,7 @@ namespace Interview.UI.Controllers
             }
             catch (Exception ex)
             {
+                //passes error message to Error.chtml automatically
                 throw new ApplicationException($"An error occurred : {ex.Message}", ex);
             }
            }
