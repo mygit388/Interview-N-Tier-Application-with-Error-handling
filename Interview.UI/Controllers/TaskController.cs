@@ -20,7 +20,7 @@ namespace Interview.UI.Controllers
         // GET: Task
         public ActionResult Index(int profileId)
         {
-            try
+           try
             {
                 ViewBag.ProfileId = profileId;
                 var tasks = _taskService.GetTasks(profileId);
@@ -29,7 +29,9 @@ namespace Interview.UI.Controllers
             
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred : {ex.Message}", ex);
+                // here error message is passed to "Error.chtml" by calling return function 
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
             }
         }
 
@@ -49,7 +51,9 @@ namespace Interview.UI.Controllers
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred : {ex.Message}", ex);
+                // here error message is passed to "Error.chtml" by calling return function 
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
             }
 
         }
@@ -81,7 +85,9 @@ namespace Interview.UI.Controllers
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred : {ex.Message}", ex);
+                // here error message is passed to "Error.chtml" by calling return function 
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
             }
         }
         
@@ -101,7 +107,9 @@ namespace Interview.UI.Controllers
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred : {ex.Message}", ex);
+                // here error message is passed to "Error.chtml" by calling return function 
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
             }
 
         }
@@ -123,7 +131,9 @@ namespace Interview.UI.Controllers
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred : {ex.Message}", ex);
+                // here error message is passed to "Error.chtml" by calling return function 
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
             }
 
         }
@@ -143,7 +153,9 @@ namespace Interview.UI.Controllers
             }
             catch (Exception ex)
             {
-                throw new ApplicationException($"An error occurred : {ex.Message}", ex);
+                // here error message is passed to "Error.chtml" by calling return function 
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error");
             }
         }
 
@@ -159,6 +171,8 @@ namespace Interview.UI.Controllers
             }
             catch (Exception ex)
             {
+
+                //passes error message to Error.chtml automatically
                 throw new ApplicationException($"An error occurred : {ex.Message}", ex);
             }
         }
